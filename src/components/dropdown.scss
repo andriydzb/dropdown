@@ -8,6 +8,7 @@
     cursor: pointer;
     border: 1px solid #cbcbcb;
     padding: 19px 40px 19px 17px;
+    background-color: #fff;
 
     &:after {
       content: '';
@@ -28,6 +29,8 @@
     position: absolute;
     top: calc(100% + 4px);
     width: 100%;
+    z-index: 100;
+    background-color: #fff;
   }
   &--item {
     cursor: pointer;
