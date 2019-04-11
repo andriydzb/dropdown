@@ -80,18 +80,20 @@ class Dropdown extends Component {
   };
 
   render() {
-    let updatedTitle;
     const { countries, title, selectedCountryId } = this.props;
+    let updatedTitle;
+    let checkedId = selectedCountryId;
     
-    if (selectedCountryId.length > 0) {
+    if (selectedCountryId.length > 0 && selectedCountryId < countries.length) {
       updatedTitle = this.updateTitle(countries, selectedCountryId).name;
     } else {
       updatedTitle = title;
+      checkedId = 0;
     }
 
     return <DropdownList countries={countries} 
                          title={updatedTitle} 
-                         selectedCountryId={selectedCountryId}
+                         selectedCountryId={checkedId}
                          onSelectedValueChanged={this.onSelectedValueChanged}
                          isDropdownVisible={this.state.isDropdownVisible}
                          updateDropdownVisibility={this.updateDropdownVisibility}
